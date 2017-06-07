@@ -8,7 +8,7 @@ window.onload = function() {
     var heightSmall = 200;
 
 
-    //获取图片
+    //获取图片,并且记录图片大小比例
     var img1, img2, widthSacle, heightScale;
     var input = document.getElementById("imageFile");
     input.addEventListener('change', function() {
@@ -24,14 +24,14 @@ window.onload = function() {
             var img = new Image();
             img.src = img1.src;
 
-            widthSacle = 400 / img.width;
-            heightScale = 400 / img.height;
+            widthSacle = widthMax / img.width;
+            heightScale = heightMax / img.height;
 
-            img1.width = 400;
-            img1.height = 400;
+            img1.width = widthMax;
+            img1.height = heightMax;
 
-            img2.width = 400;
-            img2.height = 400;
+            img2.width = widthMax;
+            img2.height = heightMax;
 
             setPreview(); //预览一下
         }
