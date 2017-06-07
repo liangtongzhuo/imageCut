@@ -1,5 +1,11 @@
 window.onload = function() {
-    document.onselectstart = new Function('event.returnValue=false;');
+
+
+
+
+
+
+    document.onselectstart = new Function('event.returnValue=false;'); //防止选中蓝色提示， 不明白注释了以后，尝试拖拽看看效果。
     $("#main").draggable({
         containment: 'parent',
         drag: setChoice
@@ -169,18 +175,14 @@ window.onload = function() {
     //预览函数
     function setPreview() {
         var top = mainDiv.offsetTop;
-        var right = mainDiv.offsetLeft + mainDiv.offsetWidth;
-        var bottom = mainDiv.offsetTop + mainDiv.offsetHeight;
         var left = mainDiv.offsetLeft;
+        var width = mainDiv.offsetWidth - 2;
+        var height = mainDiv.offsetHeight - 2;
         var img = document.getElementById("img1");
-
-
-
-        console.log(mainDiv.offsetWidth);
 
         canvas.width = 200;
         canvas.height = 200;
-        ctx.drawImage(img, -left, -top, 400, 400);
+        ctx.drawImage(img, 0, 0, width * 2, height * 2, -left, -top, 400, 400);
     }
 
 
