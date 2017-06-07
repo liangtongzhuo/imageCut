@@ -1,9 +1,7 @@
 #box {
     position: absolute;
-    top: 100px;
-    left: 200px;
-    width: 344px;
-    height: 386px;
+    width: 400px;
+    height: 400px;
 }
 
 #img1 {
@@ -25,6 +23,17 @@
     border: 1px solid #fff;
     width: 200px;
     height: 200px;
+}
+
+#canvas {
+    position: absolute;
+    left: 450px;
+}
+
+#file {
+    position: absolute;
+    left: 450px;
+    top: 250px;
 }
 
 .minDiv {

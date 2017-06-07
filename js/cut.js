@@ -168,10 +168,9 @@ window.onload = function() {
 
     }
 
-    //创建画布
-    var canvas = document.createElement("canvas");
+    //画布
+    var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    document.getElementsByTagName('body')[0].appendChild(canvas);
     //预览函数
     function setPreview() {
         var top = mainDiv.offsetTop;
