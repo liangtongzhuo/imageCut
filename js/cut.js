@@ -1,11 +1,11 @@
 window.onload = function() {
+    //选择框大小
     var widthMax = 400;
     var heightMax = 400;
-    var width = 200;
-    var height = 200;
 
-
-
+    //设置预览图大小
+    var widthSmall = 200;
+    var heightSmall = 200;
 
     document.onselectstart = new Function('event.returnValue=false;'); //防止选中蓝色提示， 不明白注释了以后，尝试拖拽看看效果。
     $("#main").draggable({
@@ -173,19 +173,18 @@ window.onload = function() {
     //画布
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = widthSmall;
+    canvas.height = heightSmall;
 
     //预览函数
     function setPreview() {
         var top = mainDiv.offsetTop;
         var left = mainDiv.offsetLeft;
-        var width = mainDiv.offsetWidth - 2;
-        var height = mainDiv.offsetHeight - 2;
+        var width = mainDiv.offsetWidth;
+        var height = mainDiv.offsetHeight;
         var img = document.getElementById("img1");
-
-
-        ctx.drawImage(img, 0, 0, width * 2, height * 2, -left, -top, widthMax, heightMax);
+        console.log(width * 2, left);
+        ctx.drawImage(img, left, top, width * 2, height * 2, 0, 0, widthMax, heightMax);
     }
 
 
