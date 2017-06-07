@@ -159,7 +159,6 @@ window.onload = function() {
         var left = mainDiv.offsetLeft;
         var img2 = document.getElementById("img2");
         img2.style.clip = "rect(" + top + "px," + right + "px," + bottom + "px," + left + "px)";
-        console.log(top);
 
     }
 
@@ -173,18 +172,15 @@ window.onload = function() {
         var right = mainDiv.offsetLeft + mainDiv.offsetWidth;
         var bottom = mainDiv.offsetTop + mainDiv.offsetHeight;
         var left = mainDiv.offsetLeft;
-        var img3 = document.getElementById("img3");
-        img3.style.top = -top + "px";
-        img3.style.left = -left + "px";
-        img3.style.clip = "rect(" + top + "px," + right + "px," + bottom + "px," + left + "px)";
+        var img = document.getElementById("img1");
 
 
 
-
+        console.log(mainDiv.offsetWidth);
 
         canvas.width = 200;
         canvas.height = 200;
-        ctx.drawImage(img3, -left, -top, 400, 400);
+        ctx.drawImage(img, -left, -top, 400, 400);
     }
 
 

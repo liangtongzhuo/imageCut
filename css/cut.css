@@ -85,15 +85,3 @@
     margin-top: -4px;
     cursor: w-resize;
 }
-
-#preview {
-    position: absolute;
-    top: 100px;
-    left: 550px;
-    width: 344px;
-    height: 386px;
-}
-
-#preview img {
-    position: absolute;
-}
