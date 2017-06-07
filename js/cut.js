@@ -1,6 +1,8 @@
 window.onload = function() {
-
-
+    var widthMax = 400;
+    var heightMax = 400;
+    var width = 200;
+    var height = 200;
 
 
 
@@ -171,6 +173,9 @@ window.onload = function() {
     //画布
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
+    canvas.width = width;
+    canvas.height = height;
+
     //预览函数
     function setPreview() {
         var top = mainDiv.offsetTop;
@@ -179,9 +184,8 @@ window.onload = function() {
         var height = mainDiv.offsetHeight - 2;
         var img = document.getElementById("img1");
 
-        canvas.width = 200;
-        canvas.height = 200;
-        ctx.drawImage(img, 0, 0, width * 2, height * 2, -left, -top, 400, 400);
+
+        ctx.drawImage(img, 0, 0, width * 2, height * 2, -left, -top, widthMax, heightMax);
     }
 
 
