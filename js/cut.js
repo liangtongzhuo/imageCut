@@ -7,6 +7,30 @@ window.onload = function() {
     var widthSmall = 200;
     var heightSmall = 200;
 
+
+    //获取图片
+    var img1, img2;
+    var input = document.getElementById("imageFile");
+    input.addEventListener('change', function() {
+        var file = this.files[0];
+        img1 = document.getElementById("img1");
+        img2 = document.getElementById("img2");
+
+        img1.width = 400;
+        img1.height = 400;
+
+        img2.width = 400;
+        img2.height = 400;
+
+        img1.src = window.URL.createObjectURL(file);
+        img2.src = window.URL.createObjectURL(file);
+
+        //图片加载成功
+        img1.onload = function() {
+            setPreview(); //预览一下
+        }
+    });
+
     document.onselectstart = new Function('event.returnValue=false;'); //防止选中蓝色提示， 不明白注释了以后，尝试拖拽看看效果。
     $("#main").draggable({
         containment: 'parent',
@@ -176,15 +200,15 @@ window.onload = function() {
     canvas.width = widthSmall;
     canvas.height = heightSmall;
 
+
+
     //预览函数
     function setPreview() {
         var top = mainDiv.offsetTop;
         var left = mainDiv.offsetLeft;
         var width = mainDiv.offsetWidth;
         var height = mainDiv.offsetHeight;
-        var img = document.getElementById("img1");
-        console.log(width * 2, left);
-        ctx.drawImage(img, left, top, width * 2, height * 2, 0, 0, widthMax, heightMax);
+        ctx.drawImage(img1, left, top, width * 2, height * 2, 0, 0, widthMax, heightMax);
     }
 
 
