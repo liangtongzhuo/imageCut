@@ -1,0 +1,99 @@
+#box {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 344px;
+    height: 386px;
+}
+
+#img1 {
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#img2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip: rect(0, 200px, 200px, 0);
+}
+
+#main {
+    position: absolute;
+    border: 1px solid #fff;
+    width: 200px;
+    height: 200px;
+}
+
+.minDiv {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+}
+
+.left-up {
+    left: -4px;
+    top: -4px;
+    cursor: nw-resize;
+}
+
+.up {
+    left: 50%;
+    top: -4px;
+    margin-left: -4px;
+    cursor: n-resize;
+}
+
+.right-up {
+    right: -4px;
+    top: -4px;
+    cursor: ne-resize;
+}
+
+.right {
+    top: 50%;
+    right: -4px;
+    margin-top: -4px;
+    cursor: e-resize;
+}
+
+.right-down {
+    right: -4px;
+    bottom: -4px;
+    cursor: se-resize;
+}
+
+.down {
+    bottom: -4px;
+    left: 50%;
+    margin-left: -4px;
+    cursor: s-resize;
+}
+
+.left-down {
+    left: -4px;
+    bottom: -4px;
+    cursor: sw-resize;
+}
+
+.left {
+    left: -4px;
+    top: 50%;
+    margin-top: -4px;
+    cursor: w-resize;
+}
+
+#preview {
+    position: absolute;
+    top: 100px;
+    left: 550px;
+    width: 344px;
+    height: 386px;
+}
+
+#preview img {
+    position: absolute;
+}
