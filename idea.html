@@ -48,14 +48,14 @@
 
 
 
-        canvas.toBlob(function(blob) {
-            var form = new FormData();
-            form.append('file', blob);
-            fetch('/api/upload', {
-                method: 'POST',
-                body: form
-            });
-        });
+        // canvas.toBlob(function(blob) {
+        //     var form = new FormData();
+        //     form.append('file', blob);
+        //     fetch('/api/upload', {
+        //         method: 'POST',
+        //         body: form
+        //     });
+        // });
     </script>
 
 </body>
