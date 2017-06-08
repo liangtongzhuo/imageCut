@@ -40,13 +40,19 @@
                 canvas.height = height;
                 ctx.drawImage(img, 0, 0, width, height);
                 document.getElementsByTagName('body')[0].appendChild(canvas);
+
+
             }
 
         });
 
         document.getElementsByTagName('body')[0].appendChild(input);
 
-
+        function convertCanvasToImage(canvas) {
+            var image = new Image();
+            image.src = canvas.toDataURL("image/png");
+            return image;
+        }
 
         // canvas.toBlob(function(blob) {
         //     var form = new FormData();
