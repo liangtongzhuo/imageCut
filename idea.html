@@ -53,15 +53,18 @@
             image.src = canvas.toDataURL("image/png");
             return image;
         }
+        //利用插件
+        canvas.toBlob(function(blob) {
+            var form = new FormData();
+            form.append('file', blob);
+            fd.append("fileName", "123jpg"); //fileName为自定义，名字随机生成或者写死，看需求
+            form xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("POST", “你发送上传请求的url”);
+            xmlHttp.send(form);
+            xmlHttp.onreadystatechange = Function() {
 
-        // canvas.toBlob(function(blob) {
-        //     var form = new FormData();
-        //     form.append('file', blob);
-        //     fetch('/api/upload', {
-        //         method: 'POST',
-        //         body: form
-        //     });
-        // });
+            };
+        });
     </script>
 
 </body>
