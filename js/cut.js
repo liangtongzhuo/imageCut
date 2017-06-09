@@ -8,6 +8,8 @@ window.onload = function() {
     var heightSmall = 200;
     //默认图片路径
     var imgSrc = 'img/logo.jpg';
+    //图片上传路径 POST 请求,注意跨域问题
+    var upImageUrl = 'upload';
 
     //获取图片,并且记录图片大小比例
     var img1, img2, widthSacle, heightScale;
@@ -52,11 +54,10 @@ window.onload = function() {
         //利用Blob插件转换
         canvas.toBlob(function(blob) {
             var form = new FormData();
-            form.append('file', blob);
+            form.append('file', blob); //
             // form.append("fileName", "123jpg"); //fileName为自定义，名字随机生成或者写死，看需求
             var xmlHttp = new XMLHttpRequest();
-            // xmlHttp.setRequestHeader("Content-Type", "multipart/form-data");
-            xmlHttp.open("POST", "/upload"); //注意跨域问题
+            xmlHttp.open("POST", upImageUrl); //注意跨域问题
             xmlHttp.send(form);
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {　　　　　　
