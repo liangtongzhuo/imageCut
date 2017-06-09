@@ -6,7 +6,7 @@ window.onload = function() {
     //设置预览图大小
     var widthSmall = 200;
     var heightSmall = 200;
-    //图片路径
+    //默认图片路径
     var imgSrc = 'img/logo.jpg';
 
     //获取图片,并且记录图片大小比例
@@ -16,6 +16,13 @@ window.onload = function() {
     img2 = document.getElementById("img2");
     img1.src = imgSrc;
     img2.src = imgSrc;
+
+    //画布
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = widthSmall;
+    canvas.height = heightSmall;
+
     //图片加载成功
     img1.onload = function() {
         var img = new Image();
@@ -39,9 +46,27 @@ window.onload = function() {
         img2.src = window.URL.createObjectURL(file);
     });
 
-    //点击了
+    //点击了上传
     var btn = document.getElementById("button");
     btn.onclick = function() {
+        //利用Blob插件转换
+        canvas.toBlob(function(blob) {
+            var form = new FormData();
+            form.append('file', blob);
+            // form.append("fileName", "123jpg"); //fileName为自定义，名字随机生成或者写死，看需求
+            var xmlHttp = new XMLHttpRequest();
+            // xmlHttp.setRequestHeader("Content-Type", "multipart/form-data");
+            xmlHttp.open("POST", "/upload"); //注意跨域问题
+            xmlHttp.send(form);
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {　　　　　　
+                    console.log(xmlHttp.responseText);　　　　
+                } else {　　　　　　
+                    console.log(xmlHttp.statusText);　　　　
+                }
+            };
+
+        });
 
     }
 
@@ -212,11 +237,7 @@ window.onload = function() {
 
     }
 
-    //画布
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    canvas.width = widthSmall;
-    canvas.height = heightSmall;
+
 
     //预览函数
     function setPreview() {

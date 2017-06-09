@@ -53,18 +53,27 @@
             image.src = canvas.toDataURL("image/png");
             return image;
         }
-        //利用插件
-        canvas.toBlob(function(blob) {
-            var form = new FormData();
-            form.append('file', blob);
-            fd.append("fileName", "123jpg"); //fileName为自定义，名字随机生成或者写死，看需求
-            form xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("POST", “你发送上传请求的url”);
-            xmlHttp.send(form);
-            xmlHttp.onreadystatechange = Function() {
-
-            };
-        });
+        // //利用插件
+        // canvas.toBlob(function(blob) {
+        //     var form = new FormData();
+        //     form.append('file', blob);
+        //     form.append("fileName", "123jpg"); //fileName为自定义，名字随机生成或者写死，看需求
+        //     var xmlHttp = new XMLHttpRequest();
+        //     xmlHttp.setRequestHeader("Content-Type", "multipart/form-data");
+        //     xmlHttp.open("POST", “你发送上传请求的url”);
+        //     xmlHttp.send(form);
+        //     xmlHttp.onreadystatechange = Function() {
+        //         if (xmlHttp.readyState == 4) {
+        //             var status = xmlHttp.status;
+        //             if (status == 200) {
+        //                 console.log(xmlHttp.responseText);
+        //             } else {
+        //                 console.log(xmlHttp.responseText);
+        //             }
+        //         }
+        //     };
+        //
+        // });
     </script>
 
 </body>
