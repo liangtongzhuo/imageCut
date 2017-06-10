@@ -3,7 +3,7 @@ window.onload = function() {
     var widthMax = 400;
     var heightMax = 400;
 
-    //设置预览图大小
+    //设置预览图大小,也就是以后生成图片的尺寸
     var widthSmall = 200;
     var heightSmall = 200;
     //默认图片路径
